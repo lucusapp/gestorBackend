@@ -1,47 +1,46 @@
-//importamos el modelo
-import FiscalModeL from "../models/GestorModel.js";
+import LegisModel from "../models/LegisModel.js";
 
 
 //Definimos lo métodos para el CRUD
 //Mostrar todos los registros
-export async function getFiscal(req, res){
+export async function getLegis(req, res){
     try{
-        const Todofiscal = await FiscalModeL.findAll();
-        res.json(Todofiscal);
+        const Todolegis = await LegisModel.findAll();
+        res.json(Todolegis);
     } catch(e){
         res.json({message:e.message});
     }
 }
 
 //Mostrar un registro
-export async function getFiscalById(req, res){
+export async function getLegisById(req, res){
     try{
-        const fiscal = await FiscalModeL.findByPk(req.params.id);
-        res.json(fiscal)
+        const legis = await LegisModel.findByPk(req.params.id);
+        res.json(legis)
     } catch(e){
         res.json({message:e.message});
     }
 } 
 
 //Crear un registro
-export async function createFiscal(req, res){
+export async function createLegis(req, res){
     try{
-        const {title, contenido} = req.body;
-        const fiscal = await FiscalModeL.create({
-            title, 
+        const {articulo, contenido} = req.body;
+        const legis = await LegisModel.create({
+            articulo,
             contenido
         });
-        res.json(fiscal);
+        res.json(legis);
     } catch(e){
         res.json({message:e.message});
     }
 }
 
 //Actualizar un registro
-export async function updateFiscal(req, res){
+export async function updateLegis(req, res){
     try{
         const {title, contenido} = req.body;
-        const fiscal = await FiscalModeL.update({
+        const legis = await LegisModel.update({
             title,
             contenido
         },
@@ -50,23 +49,22 @@ export async function updateFiscal(req, res){
                 id: req.params.id
             }
         });
-        res.json(fiscal);
+        res.json(legis);
     } catch(e){
         res.json({message:e.message});
     }
 }
 
 //Eliminar un registro
-export async function deleteFiscal(req, res){
+export async function deleteLegis(req, res){
     try{
-        const fiscal = await FiscalModeL.destroy({
+        const legis = await LegisModel.destroy({
             where: {
                 id: req.params.id
             }
         });
-        res.json(fiscal);
+        res.json(legis);
     } catch(e){
         res.json({message:e.message});
     }
 }
-
