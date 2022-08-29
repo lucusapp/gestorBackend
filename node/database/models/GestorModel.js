@@ -1,6 +1,6 @@
 //importamos la conexion a la base de datos
 
-import db from '../database/db.js';
+import db from '../db.js';
 
 import{DataTypes} from 'sequelize';
 

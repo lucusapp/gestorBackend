@@ -1,5 +1,5 @@
 //importamos el modelo
-import FiscalModeL from "../models/GestorModel.js";
+import FiscalModeL from "../database/models/GestorModel.js";
 
 
 //Definimos lo métodos para el CRUD

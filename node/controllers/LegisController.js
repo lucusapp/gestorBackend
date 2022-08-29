@@ -1,4 +1,4 @@
-import LegisModel from "../models/LegisModel.js";
+import LegisModel from "../database/models/LegisModel.js";
 
 
 //Definimos lo métodos para el CRUD

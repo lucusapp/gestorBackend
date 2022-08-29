@@ -4,7 +4,7 @@ import db from './database/db.js'
 
 import fiscalRouter from './routes/fiscal.js';
 import legisRouter from './routes/legis.js';
-import './asociations.js';
+import './database/asociations.js';
 
 const app = express();
 
