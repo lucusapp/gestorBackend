@@ -18,7 +18,7 @@ app.use('/fiscal', fiscalRouter);
 app.use('/legis', legisRouter);
 
 try{
-    await db.sync({force:true});
+    await db.sync({force:false});
     console.log('conectado ao base de dados');
 }
 catch(err){

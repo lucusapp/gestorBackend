@@ -5,7 +5,12 @@ import LegisModel from "../database/models/LegisModel.js";
 //Mostrar todos los registros
 export async function getLegis(req, res){
     try{
-        const Todolegis = await LegisModel.findAll();
+        const Todolegis = await LegisModel.findAll({
+            include:{
+                association:'fiscal',
+                attributes:['title', 'contenido' ]
+            }
+        });
         res.json(Todolegis);
     } catch(e){
         res.json({message:e.message});

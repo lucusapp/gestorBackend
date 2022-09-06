@@ -1,0 +1,24 @@
+{
+    "development": {
+      "username": "gavialus",
+      "password": "@Romimu1111",
+      "database": "9059881_gestorApp",
+      "host": "PMYSQL154.dns-servicio.com",
+      "dialect": "mysql"
+    },
+    "test": {
+        "username": "gavialus",
+        "password": "@Romimu1111",
+        "database": "9059881_gestorApp",
+        "host": "PMYSQL154.dns-servicio.com",
+        "dialect": "mysql"
+    },
+    "production": {
+        "username": "gavialus",
+        "password": "@Romimu1111",
+        "database": "9059881_gestorApp",
+        "host": "PMYSQL154.dns-servicio.com",
+        "dialect": "mysql"
+    }
+  }
+  

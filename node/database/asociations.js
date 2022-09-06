@@ -1,8 +1,12 @@
 import FiscalModeL from "./models/GestorModel.js";
 import LegisModel from "./models/LegisModel.js";
-//añadir una clave foranea a la tabla FiscalModel
-FiscalModeL.hasMany(LegisModel,{foreingKey:"titulo_id"})
+import SupuestoModel from "./models/SupuestoModel.js"
+//crea una nueva tabla en la base de datos
+FiscalModeL.belongsToMany(SupuestoModel,{through:"fiscal_legis"})
+FiscalModeL.hasOne(LegisModel)
 
 
 //añade una clave
-LegisModel.belongsTo(FiscalModeL,{foreingKey:"titulo"})
+LegisModel.belongsTo(FiscalModeL)
+SupuestoModel.belongsToMany(FiscalModeL,{through:"fiscal_legis"})
+

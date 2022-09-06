@@ -6,7 +6,13 @@ import FiscalModeL from "../database/models/GestorModel.js";
 //Mostrar todos los registros
 export async function getFiscal(req, res){
     try{
-        const Todofiscal = await FiscalModeL.findAll();
+        const Todofiscal = await FiscalModeL.findAll({
+            include:{
+                association: "legislacion",
+                attributes: ['articulo']
+
+            }
+        });
         res.json(Todofiscal);
     } catch(e){
         res.json({message:e.message});
